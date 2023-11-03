@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Expiry Date Notifications</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+  <h1>Expiry Date Notifications</h1>
+
+  <div id="employees"></div>
+
+  <script>
+    $(document).ready(function() {
+      // Get the employee data from the API endpoint
+      $.getJSON("/api/employees", function(data) {
+        // Iterate over the employee data
+        $.each(data, function(index, employee) {
+          // Display the employee's name and expiry date
+          $("#employees").append("<p>" + employee.Employee Name + " - " + employee.PASSPORT EXPIRY + "</p>");
+        });
+      });
+    });
+  </script>
+</body>
+</html>
